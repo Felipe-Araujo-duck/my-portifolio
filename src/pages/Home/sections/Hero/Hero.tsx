@@ -28,6 +28,23 @@ const Hero = () => {
     zIndex: 2,
   }));
 
+  const handleDownloadCV = () => {
+    const cvUrl = "/CV_Felipe_Araujo.pdf"; 
+    const link = document.createElement("a");
+    link.href = cvUrl;
+    link.download = "Felipe_Araujo_CV.pdf"; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleContactMe = () => {
+    const email = "fellipearraujjo2004@gmail.com"; 
+    const subject = encodeURIComponent("Contato via site");
+    const body = encodeURIComponent("Olá Felipe, gostaria de entrar em contato com você!");
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <StylesHero>
       <Container>
@@ -49,13 +66,13 @@ const Hero = () => {
             </Typography>
             <Grid container spacing={2} justifyContent="center" mt={2} pt={3} zIndex={2}>
               <Grid item>
-                <StyledButton onClick={() => console.log("Download CV")}> 
+                <StyledButton onClick={handleDownloadCV}> 
                   <DownloadIcon />
                   <Typography>Download CV</Typography>
                 </StyledButton>
               </Grid>
               <Grid item>
-                <StyledButton onClick={() => console.log("Contact me")}> 
+                <StyledButton onClick={handleContactMe}> 
                   <MailOutlineIcon />
                   <Typography>Contact me</Typography>
                 </StyledButton>
