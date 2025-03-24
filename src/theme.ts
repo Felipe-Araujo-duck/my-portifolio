@@ -6,11 +6,11 @@ let theme = createTheme({
       main: '#232323',
     },
     secondary: {
-      main: '#4f8e3e',
+      main: '#0043ffdb',
     },
   },
   typography: {
-    fontFamily: 'Helvetica Neue'
+    fontFamily: 'system-ui'
   }
 });
 
