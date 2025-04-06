@@ -1,6 +1,7 @@
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import AnimationComponent from "../../../../components/AnimatonComponent/AnimationComponent";
 import ProjectCard, { ProjectCardProps } from "../../../../components/ProjectCard/ProjectCard";
+import Agape from "../../../../assets/images/agape.png";
 
 const Projects: React.FC = () => {
 
@@ -13,7 +14,7 @@ const Projects: React.FC = () => {
         {
             title: "Project Ágape",
             subtitle: "Jan 30, 2025 - Progress",
-            srcImg: "/src/assets/images/agape.png",
+            srcImg: Agape,
             description: "O Sistema Ágape é uma solução profissional em desenvolvimento para gestão de pet shops, pensada para facilitar as vendas e o controle do negócio. Permite o cadastro de clientes com histórico de compras a prazo, controle automático de estoque, emissão de boletos e organização dos vendedores por usuário. Com uma interface intuitiva e tecnologias modernas como Angular 19, Nest.js e MySQL, o sistema oferece segurança com autenticação via token JWT e foco na performance. Ele ajuda o vendedor a vender mais com praticidade, enquanto o empresário ganha total controle sobre as operações do pet shop em tempo real podendo analisar o desempenho do seu negócio em qualquer momento. (Esse projeto foi desenvolvido somente por mim com a presença de um cliente avaliando o projeto e é armazenado em um repositório privado)",
             technologies: "Technologies: Angular, Nest.js, MySQL",
             websiteURL: "https://github.com/Felipe-Araujo-duck",
