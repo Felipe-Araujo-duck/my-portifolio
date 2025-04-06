@@ -1,10 +1,11 @@
 import { Box, Container, Grid, styled, Typography } from "@mui/material";
-import Avatar from "../../../../assets/images/avatar.jpg";
+import Avatar from "../../../../assets/images/my-foto.jpg";
 import DownloadIcon from "@mui/icons-material/Download";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import theme from "../../../../theme";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+import Typewriter from "../../../../components/Typewriter/Typewriter";
 
 const Hero = () => {
   const StylesHero = styled("div")(() => ({
@@ -61,9 +62,7 @@ const Hero = () => {
             <Typography color="primary.contrastText" variant="h1" pb={2}>
               Felipe Araújo
             </Typography>
-            <Typography color="primary.contrastText" variant="h2">
-              Desenvolvedor Web
-            </Typography>
+            <Typewriter text="I'm a Web Developer" delay={120} variant="h2" color="primary.contrastText" />
             <Grid container spacing={2} justifyContent="center" mt={2} pt={3} zIndex={2}>
               <Grid item>
                 <StyledButton onClick={handleDownloadCV}> 

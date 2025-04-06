@@ -31,7 +31,7 @@ const About: React.FC = () => {
                           <StyledCard variant="outlined">
                               <WorkspacePremiumIcon />
                               <Typography textAlign="center" fontWeight={600}>Experience</Typography>
-                              <Typography textAlign="center">1+ years</Typography>
+                              <Typography textAlign="center">2+ years</Typography>
                               <Typography textAlign="center">Frontend Development</Typography>
                           </StyledCard>
                       </AnimationComponent>
