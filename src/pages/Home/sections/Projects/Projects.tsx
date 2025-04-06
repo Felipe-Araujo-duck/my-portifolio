@@ -5,6 +5,7 @@ import Agape from "../../../../assets/images/agape.png";
 import Odontrack from "../../../../assets/images/odon-track.png";
 import Mario from "../../../../assets/images/mario.png";
 import Calculadora from "../../../../assets/images/calculadora-saudavel.png";
+import GitHub from "../../../../assets/images/github.jpg";
 
 const Projects: React.FC = () => {
 
@@ -53,7 +54,7 @@ const Projects: React.FC = () => {
         {
             title: "For more projects visit my Git Hub",
             subtitle: "",
-            srcImg: "/src/assets/images/github.jpg",
+            srcImg: GitHub,
             description: "",
             technologies: "",
             websiteURL: "https://github.com/Felipe-Araujo-duck/",
