@@ -30,7 +30,7 @@ const Hero = () => {
   }));
 
   const handleDownloadCV = () => {
-    const cvUrl = "/CV_Felipe_Araujo.pdf"; 
+    const cvUrl = "/Felipe_Araujo.pdf"; 
     const link = document.createElement("a");
     link.href = cvUrl;
     link.download = "Felipe_Araujo_CV.pdf"; 
@@ -40,7 +40,7 @@ const Hero = () => {
   };
 
   const handleContactMe = () => {
-    const email = "fellipearraujjo2004@gmail.com"; 
+    const email = "felipe.araujo.dev100@gmail.com"; 
     const subject = encodeURIComponent("Contato via site");
     const body = encodeURIComponent("Olá Felipe, gostaria de entrar em contato com você!");
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
