@@ -1,4 +1,4 @@
-import { Grid, Typography, styled } from "@mui/material";
+import { Box, Card, CardContent, Chip, Stack, Typography, styled } from "@mui/material";
 import StyledButton from "../StyledButton/StyledButton";
 
 export interface ProjectCardProps {
@@ -6,7 +6,7 @@ export interface ProjectCardProps {
     subtitle: string;
     srcImg: string;
     description: string
-    technologies: string
+    technologies: string[]
     websiteURL: string;
     codeURL: string;
 }
@@ -23,48 +23,51 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
     const StyledImg = styled("img")(({ theme }) => ({
         width: "100%",
-        objectFit: "contain",
-        height: "80vw",
-        padding: "10px 0",
-        [theme.breakpoints.up('md')]: {
-            height: "45vh",
-        },
+        objectFit: "cover",
+        aspectRatio: "16 / 10",
+        borderRadius: "20px",
+        border: `1px solid ${theme.palette.secondary.main}22`,
+        marginBottom: "18px",
     }));
 
-    const StyledCard = styled("div")(({ theme }) => ({
-        borderRadius: "3px",
-        border: `0.5px solid  ${theme.palette.primary.contrastText}`,
-        backgroundColor: "transparent",
-        color: theme.palette.primary.contrastText,
-        padding: "20px",
+    const StyledCard = styled(Card)(({ theme }) => ({
+        height: '100%',
+        borderRadius: '26px',
+        transition: 'transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease',
         '&:hover': {
-            backgroundColor: theme.palette.primary.light
+            transform: 'translateY(-6px)',
+            borderColor: theme.palette.secondary.main,
+            boxShadow: '0 24px 70px rgba(0, 0, 0, 0.3)',
         }
     }));
 
     return (
         <StyledCard>
-            <Typography variant="h5">
-                {title}
-            </Typography>
-            <Typography >
-                {subtitle}
-            </Typography>
-            <StyledImg src={srcImg} />
-            <Typography>
-                {description}
-            </Typography>
-            <Typography fontWeight={600} pt={2}>
-                {technologies}
-            </Typography>
-            <Grid container spacing={1} pt={2}>
-                <Grid item xs={6}>
-                    <StyledButton onClick={() => window.open(websiteURL)}>View Project</StyledButton>
-                </Grid>
-                <Grid item xs={6}>
-                    <StyledButton onClick={() => window.open(codeURL)}>View Code</StyledButton>
-                </Grid>
-            </Grid>
+            <CardContent sx={{ p: 3 }}>
+                <StyledImg src={srcImg} alt={title} loading="lazy" />
+                <Stack spacing={1.5}>
+                    <Box>
+                        <Typography variant="h5">{title}</Typography>
+                        <Typography variant="body2" color="text.secondary">{subtitle}</Typography>
+                    </Box>
+                    <Typography variant="body1" color="text.secondary" lineHeight={1.8}>
+                        {description}
+                    </Typography>
+                    <Stack direction="row" flexWrap="wrap" gap={1}>
+                        {technologies.map((technology) => (
+                            <Chip key={technology} label={technology} size="small" variant="outlined" />
+                        ))}
+                    </Stack>
+                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} pt={1}>
+                        <StyledButton onClick={() => window.open(websiteURL, '_blank', 'noopener,noreferrer')}>
+                            Ver projeto
+                        </StyledButton>
+                        <StyledButton onClick={() => window.open(codeURL, '_blank', 'noopener,noreferrer')}>
+                            Ver código
+                        </StyledButton>
+                    </Stack>
+                </Stack>
+            </CardContent>
         </StyledCard>
     )
 }
